@@ -101,19 +101,22 @@ class AuthController extends Controller
     {
         try {
             $user = auth()->user()->load('roles', 'roles.permissions');
-            $expiresIn = auth()->factory()->getTTL() * 60; // Tiempo en segundos
+            $expiresInMinutes = config('jwt.ttl'); // Tiempo en minutos desde la configuración
+            $expiresInSeconds = $expiresInMinutes * 60; // Convertir minutos a segundos
 
             return response()->json([
                 'access_token' => $token,
                 'refresh_token' => $refreshToken,
                 'token_type' => 'bearer',
                 'user' => $user,
-                'expires_in' => $expiresIn,
+                'expires_in' => $expiresInSeconds,
             ]);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Failed to respond with token'], 500);
         }
     }
+
+
 
     protected function createRefreshToken($userId)
     {
@@ -128,5 +131,13 @@ class AuthController extends Controller
 
         return $refreshToken;
     }
+
+
+    public function testTokenTTL()
+    {
+        $ttl = config('jwt.ttl');
+        return response()->json(['ttl' => $ttl]);
+    }
+
 }
 

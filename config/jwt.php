@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'ttl' => env('JWT_TTL', 60),
+    'ttl' => env('JWT_TTL', 1),
 
     // Other configurations...
 ];
