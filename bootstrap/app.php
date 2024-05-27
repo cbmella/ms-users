@@ -66,6 +66,10 @@ $app->configure('permission');
 |
 */
 
+$app->middleware([
+    App\Http\Middleware\CorsMiddleware::class, // Aquí se registra el middleware de CORS
+]);
+
 $app->routeMiddleware([
     'api' => App\Http\Middleware\ApiMiddleware::class,
     'auth' => App\Http\Middleware\Authenticate::class,
