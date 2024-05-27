@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    container_name: authentication-api
+    build: .
+    image:  cbm3lla/api-lumen-authentication-dev:1.0  # Etiqueta de la imagen
+    volumes:
+      - C:/Users/admin/dev/configs/petfinder/.env:/var/www/html/.env
+    ports:
+      - "9000:80"
+    restart: always

@@ -1,0 +1,455 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger with Lumen",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/ckan-datasets": {
+            "get": {
+                "summary": "Obtiene conjuntos de datos",
+                "description": "Recupera una lista de conjuntos de datos desde CKAN, con la opción de paginación.",
+                "operationId": "acb3f8f27446fc3893f2c98535541d25",
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Índice de inicio para la paginación de los conjuntos de datos",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "rows",
+                        "in": "query",
+                        "description": "Número de filas o conjuntos de datos a devolver",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "count": {
+                                            "description": "Número total de conjuntos de datos disponibles",
+                                            "type": "integer"
+                                        },
+                                        "datasets": {
+                                            "description": "Lista de conjuntos de datos",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Dataset"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error en la solicitud"
+                    }
+                }
+            }
+        },
+        "/ckan-datasets/details/{id}": {
+            "get": {
+                "summary": "Obtiene detalles de un conjunto de datos específico",
+                "description": "Recupera los detalles completos de un conjunto de datos específico en CKAN, incluyendo recursos y etiquetas.",
+                "operationId": "3980342247beb8a2c95e4eb89d81e681",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID único del conjunto de datos",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detalles del conjunto de datos",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DatasetDetail"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error en la solicitud"
+                    },
+                    "404": {
+                        "description": "Conjunto de datos no encontrado"
+                    }
+                }
+            }
+        },
+        "/ckan-datasets-by-tag/{tag}": {
+            "get": {
+                "summary": "Obtiene conjuntos de datos por etiqueta",
+                "description": "Recupera conjuntos de datos asociados con una etiqueta específica, con opciones de paginación.",
+                "operationId": "7db2e396c0a76e7475d58a2db595fb99",
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "description": "Etiqueta para filtrar los conjuntos de datos",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Índice de inicio para la paginación de los conjuntos de datos",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "rows",
+                        "in": "query",
+                        "description": "Número de conjuntos de datos a devolver en la respuesta",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de conjuntos de datos filtrados por etiqueta",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "count": {
+                                            "description": "Número total de conjuntos de datos encontrados",
+                                            "type": "integer"
+                                        },
+                                        "datasets": {
+                                            "description": "Conjuntos de datos que coinciden con la etiqueta especificada",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Dataset"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error en la solicitud"
+                    }
+                }
+            }
+        },
+        "/ckan-datasets/most_downloaded/{rows}": {
+            "get": {
+                "summary": "Obtiene los conjuntos de datos más descargados",
+                "description": "Recupera una lista de los conjuntos de datos más descargados, limitada a un número específico de filas.",
+                "operationId": "89b17f39548cad494eb5b09576596034",
+                "parameters": [
+                    {
+                        "name": "rows",
+                        "in": "path",
+                        "description": "Número de filas o conjuntos de datos a devolver",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de los conjuntos de datos más descargados",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "count": {
+                                            "description": "Número total de conjuntos de datos más descargados disponibles",
+                                            "type": "integer"
+                                        },
+                                        "datasets": {
+                                            "description": "Conjuntos de datos más descargados",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Dataset"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error en la solicitud"
+                    }
+                }
+            }
+        },
+        "/ckan-datasets/latest/{rows}": {
+            "get": {
+                "summary": "Obtiene los conjuntos de datos más recientes",
+                "description": "Recupera una lista de los conjuntos de datos más recientemente actualizados, limitada a un número específico de filas.",
+                "operationId": "251999623dab04b0938af8274f9a1790",
+                "parameters": [
+                    {
+                        "name": "rows",
+                        "in": "path",
+                        "description": "Número de filas o conjuntos de datos a devolver",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de los conjuntos de datos más recientes",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "count": {
+                                            "description": "Número total de conjuntos de datos más recientes disponibles",
+                                            "type": "integer"
+                                        },
+                                        "datasets": {
+                                            "description": "Conjuntos de datos más recientes",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Dataset"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error en la solicitud"
+                    }
+                }
+            }
+        },
+        "/ckan-datasets/most_searched/{rows}": {
+            "get": {
+                "summary": "Obtiene los conjuntos de datos más buscados",
+                "description": "Recupera una lista de los conjuntos de datos más buscados, limitada a un número específico de filas.",
+                "operationId": "a4793c0a71a5120bdd25210b789d3e85",
+                "parameters": [
+                    {
+                        "name": "rows",
+                        "in": "path",
+                        "description": "Número de filas o conjuntos de datos a devolver",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de los conjuntos de datos más buscados",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "datasets": {
+                                            "description": "Conjuntos de datos más buscados",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Dataset"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error en la solicitud"
+                    }
+                }
+            }
+        },
+        "/ckan-datasets/search": {
+            "get": {
+                "summary": "Busca en los conjuntos de datos",
+                "description": "Realiza una búsqueda en los conjuntos de datos basándose en un término de búsqueda y devuelve una lista de resultados.",
+                "operationId": "7fd4fa8d0e06bb939435d44dfe281887",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Término de búsqueda para los conjuntos de datos",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resultados de la búsqueda de conjuntos de datos",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "count": {
+                                            "description": "Número total de resultados de la búsqueda",
+                                            "type": "integer"
+                                        },
+                                        "datasets": {
+                                            "description": "Conjuntos de datos que coinciden con el término de búsqueda",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Dataset"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error en la solicitud"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Dataset": {
+                "title": "Conjunto de Datos",
+                "description": "Representa un conjunto de datos en CKAN",
+                "properties": {
+                    "id": {
+                        "description": "ID único del conjunto de datos",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Nombre del conjunto de datos",
+                        "type": "string"
+                    },
+                    "notes": {
+                        "description": "Descripción o notas sobre el conjunto de datos",
+                        "type": "string"
+                    },
+                    "resource_formats": {
+                        "description": "Formatos de los recursos disponibles para el conjunto de datos",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "api_detail_url": {
+                        "description": "URL de la API para obtener detalles del conjunto de datos",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "DatasetDetail": {
+                "title": "Detalle del Conjunto de Datos",
+                "description": "Detalles de un conjunto de datos específico en CKAN",
+                "properties": {
+                    "id": {
+                        "description": "ID único del conjunto de datos",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Nombre técnico del conjunto de datos",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "Título del conjunto de datos",
+                        "type": "string"
+                    },
+                    "notes": {
+                        "description": "Descripción o notas sobre el conjunto de datos",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "URL del conjunto de datos",
+                        "type": "string"
+                    },
+                    "num_resources": {
+                        "description": "Número de recursos disponibles en el conjunto de datos",
+                        "type": "integer"
+                    },
+                    "metadata_created": {
+                        "description": "Fecha y hora de creación del metadato",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "metadata_modified": {
+                        "description": "Fecha y hora de la última modificación del metadato",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "resources": {
+                        "description": "Recursos asociados al conjunto de datos",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Resource"
+                        }
+                    },
+                    "tags": {
+                        "description": "Etiquetas asociadas al conjunto de datos",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tag"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "Resource": {
+                "title": "Recurso",
+                "description": "Representa un recurso dentro de un conjunto de datos en CKAN",
+                "type": "object"
+            },
+            "Tag": {
+                "title": "Etiqueta",
+                "description": "Representa una etiqueta asociada a un conjunto de datos en CKAN",
+                "properties": {
+                    "name": {
+                        "description": "Nombre técnico de la etiqueta",
+                        "type": "string"
+                    },
+                    "display_name": {
+                        "description": "Nombre visible de la etiqueta",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
