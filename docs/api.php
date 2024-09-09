@@ -12,7 +12,6 @@
  * )
  */
 
-
 /**
  * @OA\Post(
  *     path="/auth/login",
@@ -30,6 +29,29 @@
  *     @OA\Response(
  *         response=200,
  *         description="Successful login"
+ *     )
+ * )
+ */
+
+/**
+ * @OA\Post(
+ *     path="/auth/register",
+ *     summary="Register new user",
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\MediaType(
+ *             mediaType="application/x-www-form-urlencoded",
+ *             @OA\Schema(
+ *                 @OA\Property(property="name", type="string", example="test2"),
+ *                 @OA\Property(property="email", type="string", example="user2422@example.com"),
+ *                 @OA\Property(property="password", type="string", example="password"),
+ *                 @OA\Property(property="password_confirmation", type="string", example="password")
+ *             )
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful registration"
  *     )
  * )
  */
@@ -83,6 +105,15 @@
  *     security={
  *         {"bearerAuth": {}}
  *     },
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\MediaType(
+ *             mediaType="application/x-www-form-urlencoded",
+ *             @OA\Schema(
+ *                 @OA\Property(property="refresh_token", type="string", example="YourRefreshTokenHere")
+ *             )
+ *         )
+ *     ),
  *     @OA\Response(
  *         response=200,
  *         description="Token refreshed"

@@ -41,6 +41,44 @@
                 }
             }
         },
+        "/auth/register": {
+            "post": {
+                "summary": "Register new user",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "test2"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user2422@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "password"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "example": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful registration"
+                    }
+                }
+            }
+        },
         "/auth/me": {
             "post": {
                 "summary": "Get authenticated user details",
@@ -89,6 +127,22 @@
         "/auth/refresh": {
             "post": {
                 "summary": "Refresh authentication token",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "refresh_token": {
+                                        "type": "string",
+                                        "example": "YourRefreshTokenHere"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Token refreshed"

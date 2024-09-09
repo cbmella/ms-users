@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "authentication",
     "collectionId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
-    "dateExported": "2024-09-09T08:22:57.050Z",
+    "dateExported": "2024-09-09T12:16:24.026Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -37,6 +37,49 @@
                     {
                         "name": "password",
                         "value": "password"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "5ecc770f-7164-4a2e-9e4e-a2f170b3ce5a",
+            "colId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
+            "containerId": "",
+            "name": "/auth/register",
+            "url": "http://localhost/authentication/public/auth/register",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2024-09-09T11:58:37.515Z",
+            "modified": "2024-09-09T12:12:43.390Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                },
+                {
+                    "name": "Accept",
+                    "value": "application/x-www-form-urlencoded"
+                }
+            ],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "test2"
+                    },
+                    {
+                        "name": "password",
+                        "value": "password"
+                    },
+                    {
+                        "name": "password_confirmation",
+                        "value": "password"
+                    },
+                    {
+                        "name": "email",
+                        "value": "user2422@example.com"
                     }
                 ]
             }
@@ -163,7 +206,7 @@
             "method": "POST",
             "sortNum": 50000,
             "created": "2024-05-27T16:31:08.047Z",
-            "modified": "2024-05-27T16:42:25.669Z",
+            "modified": "2024-09-09T08:59:10.653Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -178,7 +221,7 @@
             ],
             "auth": {
                 "type": "bearer",
-                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL3JlZnJlc2giLCJpYXQiOjE3MTY4MjgwMzEsImV4cCI6MTcxNzA0NDExNCwibmJmIjoxNzE2ODI4MTE0LCJqdGkiOiJSMndiVFVGSkI0S1ZXUTM4Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.DEAyHUbGUeCceaXI6ranzYNiYVbpe3QswplElY5hBt0"
+                "bearer": "CjjdQFRNWTO0akEtLPo3ULsE6srCG2C0cWoEZkyBfoU05L0CXWVPfCNFKA3z"
             }
         },
         {
@@ -190,7 +233,7 @@
             "method": "GET",
             "sortNum": 60000,
             "created": "2024-05-27T16:31:08.048Z",
-            "modified": "2024-05-27T18:04:37.788Z",
+            "modified": "2024-09-09T09:00:01.160Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -205,7 +248,7 @@
             ],
             "auth": {
                 "type": "bearer",
-                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzE2ODMyODc3LCJleHAiOjE3MTY4MzY0NzcsIm5iZiI6MTcxNjgzMjg3NywianRpIjoiZlg5N0VFa0FyUkhPN2h0VSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.0OFyv0xmf8d0PaXweI-W0KLWPvWaDopSsJyixFNBrE8"
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzI1ODcyMzA4LCJleHAiOjE3MjU4NzU5MDgsIm5iZiI6MTcyNTg3MjMwOCwianRpIjoibmZ5U2JLYmR1MVdYbHVNRiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.FRT0EUiWCda3uGeyvdF_O3eTVrms-rGuBL00e9XjCiU"
             }
         }
     ],
@@ -214,5 +257,5 @@
             "baseUrl": "http://localhost:9004"
         }
     },
-    "ref": "FvAgoggY8_Df7JS80wwr_b11x-vD6zVmqQop7E_pDCR0Kw2__o1wEMyusGBWa_wkUnJ0Gq6qvmB0UGWNPM8HAA"
+    "ref": "FvAgoggY8_Df7JS80wwr_XVgnMIz5equ_oZtGt5tNlARZxv5462zsiG6fcNegKRLv0-E2soSDAeGPuKoqBBK8A"
 }
