@@ -1,0 +1,218 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "authentication",
+    "collectionId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
+    "dateExported": "2024-09-09T08:22:57.050Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "06d7db68-dd3b-4a39-a688-33c232984368",
+            "colId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
+            "containerId": "",
+            "name": "/auth/login",
+            "url": "http://localhost/authentication/public/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-27T16:31:08.044Z",
+            "modified": "2024-05-27T18:56:44.014Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                },
+                {
+                    "name": "Accept",
+                    "value": "application/x-www-form-urlencoded"
+                }
+            ],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "user@example.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "password"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "24c26d3f-5820-4740-8288-31c89ab07ce8",
+            "colId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
+            "containerId": "",
+            "name": "/auth/me",
+            "url": "http://localhost/authentication/public/auth/me",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-27T16:31:08.045Z",
+            "modified": "2024-05-27T19:36:13.153Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                }
+            ],
+            "params": [
+                {
+                    "name": "email",
+                    "value": "superadmin@example.com",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "password",
+                    "value": "password",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzE2ODM4MzkzLCJleHAiOjE3MTY4NDE5OTMsIm5iZiI6MTcxNjgzODM5MywianRpIjoiVFBXc0RrZVdlZVFsY2ZSSyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.hzILhujNCmRn-WfYpHDoDwTdv7a5hX3ovfxabjPItZI"
+            }
+        },
+        {
+            "_id": "ff70eaf7-e34f-460d-83e2-c1594b356387",
+            "colId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
+            "containerId": "",
+            "name": "/auth/logout",
+            "url": "http://localhost/authentication/public/auth/logout",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-05-27T16:31:08.046Z",
+            "modified": "2024-05-27T18:04:28.664Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Accept",
+                    "value": "application/x-www-form-urlencoded",
+                    "isDisabled": true
+                }
+            ],
+            "params": [
+                {
+                    "name": "email",
+                    "value": "superadmin@example.com",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "password",
+                    "value": "password",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzE2ODMyODc3LCJleHAiOjE3MTY4MzY0NzcsIm5iZiI6MTcxNjgzMjg3NywianRpIjoiZlg5N0VFa0FyUkhPN2h0VSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.0OFyv0xmf8d0PaXweI-W0KLWPvWaDopSsJyixFNBrE8"
+            }
+        },
+        {
+            "_id": "e0f91800-1251-42ae-a91f-584bdce7dac9",
+            "colId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
+            "containerId": "",
+            "name": "/auth/test-token-ttl",
+            "url": "http://localhost/authentication/public/auth/test-token-ttl",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-27T17:45:36.633Z",
+            "modified": "2024-05-27T18:04:52.825Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                }
+            ],
+            "params": [
+                {
+                    "name": "email",
+                    "value": "superadmin@example.com",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "password",
+                    "value": "password",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzE2ODMyODc3LCJleHAiOjE3MTY4MzY0NzcsIm5iZiI6MTcxNjgzMjg3NywianRpIjoiZlg5N0VFa0FyUkhPN2h0VSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.0OFyv0xmf8d0PaXweI-W0KLWPvWaDopSsJyixFNBrE8"
+            }
+        },
+        {
+            "_id": "ad9b0098-69ef-45d7-bd01-12e5bf542f0d",
+            "colId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
+            "containerId": "",
+            "name": "/auth/refresh",
+            "url": "http://localhost/authentication/public/auth/refresh",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-05-27T16:31:08.047Z",
+            "modified": "2024-05-27T16:42:25.669Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Accept",
+                    "value": "application/x-www-form-urlencoded",
+                    "isDisabled": true
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL3JlZnJlc2giLCJpYXQiOjE3MTY4MjgwMzEsImV4cCI6MTcxNzA0NDExNCwibmJmIjoxNzE2ODI4MTE0LCJqdGkiOiJSMndiVFVGSkI0S1ZXUTM4Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.DEAyHUbGUeCceaXI6ranzYNiYVbpe3QswplElY5hBt0"
+            }
+        },
+        {
+            "_id": "98e4e22f-5d19-437e-b8eb-fba8fc28c8aa",
+            "colId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
+            "containerId": "",
+            "name": "/auth/validate-token",
+            "url": "http://localhost/authentication/public/auth/validate-token",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-05-27T16:31:08.048Z",
+            "modified": "2024-05-27T18:04:37.788Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Accept",
+                    "value": "application/x-www-form-urlencoded",
+                    "isDisabled": true
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzE2ODMyODc3LCJleHAiOjE3MTY4MzY0NzcsIm5iZiI6MTcxNjgzMjg3NywianRpIjoiZlg5N0VFa0FyUkhPN2h0VSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.0OFyv0xmf8d0PaXweI-W0KLWPvWaDopSsJyixFNBrE8"
+            }
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:9004"
+        }
+    },
+    "ref": "FvAgoggY8_Df7JS80wwr_b11x-vD6zVmqQop7E_pDCR0Kw2__o1wEMyusGBWa_wkUnJ0Gq6qvmB0UGWNPM8HAA"
+}
