@@ -8,12 +8,14 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator; // Importar Validator facade
 
 class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'refresh', 'validateToken']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'refresh', 'validateToken']]);
     }
 
     public function login(Request $request)
@@ -33,6 +35,43 @@ class AuthController extends Controller
             return $this->respondWithToken($token, $refreshToken);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Failed to login, please try again'], 500);
+        }
+    }
+
+    public function register(Request $request)
+    {
+        // Validación manual usando Validator facade en Lumen
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            // Si la validación falla, devolver los errores
+            return response()->json(['errors' => $validator->errors()], 400);
+        }
+
+        try {
+            // Crear el usuario
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password), // Usar Hash::make para encriptar la contraseña
+            ]);
+
+            // Autenticar al usuario y generar el token JWT
+            $credentials = $request->only('email', 'password');
+            if (!$token = JWTAuth::attempt($credentials)) {
+                return response()->json(['error' => 'Unauthorized'], 401);
+            }
+
+            $refreshToken = $this->createRefreshToken($user->id);
+            // Devolver el token y la información del usuario
+            return $this->respondWithToken($token, $refreshToken);
+        } catch (\Exception $e) {
+            // Si ocurre algún error, devolver una respuesta de error
+            return response()->json(['error' => 'Failed to register user, please try again'], 500);
         }
     }
 
@@ -100,7 +139,16 @@ class AuthController extends Controller
     protected function respondWithToken($token, $refreshToken)
     {
         try {
-            $user = auth()->user()->load('roles', 'roles.permissions');
+            $user = auth()->user(); // Obtener el usuario autenticado
+
+            if (!$user) {
+                // Si no hay usuario autenticado, devolver un error
+                return response()->json(['error' => 'User not authenticated'], 401);
+            }
+
+            // Cargar las relaciones si el usuario está autenticado
+            $user->load('roles', 'roles.permissions');
+
             $expiresInMinutes = config('jwt.ttl'); // Tiempo en minutos desde la configuración
             $expiresInSeconds = $expiresInMinutes * 60; // Convertir minutos a segundos
 
@@ -115,7 +163,6 @@ class AuthController extends Controller
             return response()->json(['error' => 'Failed to respond with token'], 500);
         }
     }
-
 
 
     protected function createRefreshToken($userId)
@@ -138,6 +185,4 @@ class AuthController extends Controller
         $ttl = config('jwt.ttl');
         return response()->json(['ttl' => $ttl]);
     }
-
 }
-
