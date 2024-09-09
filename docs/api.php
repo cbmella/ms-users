@@ -43,7 +43,7 @@
  *             mediaType="application/x-www-form-urlencoded",
  *             @OA\Schema(
  *                 @OA\Property(property="name", type="string", example="test2"),
- *                 @OA\Property(property="email", type="string", example="user2422@example.com"),
+ *                 @OA\Property(property="email", type="string", example="user2123422@example.com"),
  *                 @OA\Property(property="password", type="string", example="password"),
  *                 @OA\Property(property="password_confirmation", type="string", example="password")
  *             )
@@ -51,7 +51,7 @@
  *     ),
  *     @OA\Response(
  *         response=200,
- *         description="Successful registration"
+ *         description="User successfully registered"
  *     )
  * )
  */
@@ -110,7 +110,7 @@
  *         @OA\MediaType(
  *             mediaType="application/x-www-form-urlencoded",
  *             @OA\Schema(
- *                 @OA\Property(property="refresh_token", type="string", example="YourRefreshTokenHere")
+ *                 @OA\Property(property="refresh_token", type="string", example="agJtJrVC7INfUYG07Ht9CidBPUinCdiimAGyx5Qu6GWnB93TihZ5XllqXwCi")
  *             )
  *         )
  *     ),
@@ -135,7 +135,20 @@
  * )
  */
 
-// Bearer authentication definition
+/**
+ * @OA\Get(
+ *     path="/auth/token-life",
+ *     summary="Check remaining token life",
+ *     security={
+ *         {"bearerAuth": {}}
+ *     },
+ *     @OA\Response(
+ *         response=200,
+ *         description="Returns time left for token expiry"
+ *     )
+ * )
+ */
+
 /**
  * @OA\SecurityScheme(
  *     securityScheme="bearerAuth",

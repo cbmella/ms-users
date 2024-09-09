@@ -56,7 +56,7 @@
                                     },
                                     "email": {
                                         "type": "string",
-                                        "example": "user2422@example.com"
+                                        "example": "user2123422@example.com"
                                     },
                                     "password": {
                                         "type": "string",
@@ -74,7 +74,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Successful registration"
+                        "description": "User successfully registered"
                     }
                 }
             }
@@ -135,7 +135,7 @@
                                 "properties": {
                                     "refresh_token": {
                                         "type": "string",
-                                        "example": "YourRefreshTokenHere"
+                                        "example": "agJtJrVC7INfUYG07Ht9CidBPUinCdiimAGyx5Qu6GWnB93TihZ5XllqXwCi"
                                     }
                                 },
                                 "type": "object"
@@ -161,6 +161,21 @@
                 "responses": {
                     "200": {
                         "description": "Token is valid"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/auth/token-life": {
+            "get": {
+                "summary": "Check remaining token life",
+                "responses": {
+                    "200": {
+                        "description": "Returns time left for token expiry"
                     }
                 },
                 "security": [

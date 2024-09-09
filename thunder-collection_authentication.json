@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "authentication",
     "collectionId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
-    "dateExported": "2024-09-09T12:16:24.026Z",
+    "dateExported": "2024-09-09T13:19:37.822Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -50,7 +50,7 @@
             "method": "POST",
             "sortNum": 25000,
             "created": "2024-09-09T11:58:37.515Z",
-            "modified": "2024-09-09T12:12:43.390Z",
+            "modified": "2024-09-09T12:21:40.085Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -79,7 +79,7 @@
                     },
                     {
                         "name": "email",
-                        "value": "user2422@example.com"
+                        "value": "user2123422@example.com"
                     }
                 ]
             }
@@ -93,7 +93,7 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2024-05-27T16:31:08.045Z",
-            "modified": "2024-05-27T19:36:13.153Z",
+            "modified": "2024-09-09T13:02:00.169Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -101,23 +101,9 @@
                     "isDisabled": true
                 }
             ],
-            "params": [
-                {
-                    "name": "email",
-                    "value": "superadmin@example.com",
-                    "isDisabled": true,
-                    "isPath": false
-                },
-                {
-                    "name": "password",
-                    "value": "password",
-                    "isDisabled": true,
-                    "isPath": false
-                }
-            ],
             "auth": {
                 "type": "bearer",
-                "bearer": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzE2ODM4MzkzLCJleHAiOjE3MTY4NDE5OTMsIm5iZiI6MTcxNjgzODM5MywianRpIjoiVFBXc0RrZVdlZVFsY2ZSSyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.hzILhujNCmRn-WfYpHDoDwTdv7a5hX3ovfxabjPItZI"
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzI1ODg1MTU1LCJleHAiOjE3MjU4ODg3NTUsIm5iZiI6MTcyNTg4NTE1NSwianRpIjoiMnhqVUdtQ1lRWklFUmJxSiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ke5mh6NS57QQD166FKrjdpkk4t2nxlBEMbpM-JtXPhQ"
             }
         },
         {
@@ -129,7 +115,7 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2024-05-27T16:31:08.046Z",
-            "modified": "2024-05-27T18:04:28.664Z",
+            "modified": "2024-09-09T12:26:28.240Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -142,23 +128,9 @@
                     "isDisabled": true
                 }
             ],
-            "params": [
-                {
-                    "name": "email",
-                    "value": "superadmin@example.com",
-                    "isDisabled": true,
-                    "isPath": false
-                },
-                {
-                    "name": "password",
-                    "value": "password",
-                    "isDisabled": true,
-                    "isPath": false
-                }
-            ],
             "auth": {
                 "type": "bearer",
-                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzE2ODMyODc3LCJleHAiOjE3MTY4MzY0NzcsIm5iZiI6MTcxNjgzMjg3NywianRpIjoiZlg5N0VFa0FyUkhPN2h0VSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.0OFyv0xmf8d0PaXweI-W0KLWPvWaDopSsJyixFNBrE8"
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzI1ODg0NTAwLCJleHAiOjE3MjU4ODgxMDAsIm5iZiI6MTcyNTg4NDUwMCwianRpIjoiVGJoRWR4eHlERTd1TjB6aiIsInN1YiI6IjkiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.udwmwsxJqJ_GjAAEh05EoSNX1bhGMQN7IzVpcEG6jKA"
             }
         },
         {
@@ -170,7 +142,7 @@
             "method": "GET",
             "sortNum": 40000,
             "created": "2024-05-27T17:45:36.633Z",
-            "modified": "2024-05-27T18:04:52.825Z",
+            "modified": "2024-09-09T13:02:07.327Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -178,23 +150,9 @@
                     "isDisabled": true
                 }
             ],
-            "params": [
-                {
-                    "name": "email",
-                    "value": "superadmin@example.com",
-                    "isDisabled": true,
-                    "isPath": false
-                },
-                {
-                    "name": "password",
-                    "value": "password",
-                    "isDisabled": true,
-                    "isPath": false
-                }
-            ],
             "auth": {
                 "type": "bearer",
-                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzE2ODMyODc3LCJleHAiOjE3MTY4MzY0NzcsIm5iZiI6MTcxNjgzMjg3NywianRpIjoiZlg5N0VFa0FyUkhPN2h0VSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.0OFyv0xmf8d0PaXweI-W0KLWPvWaDopSsJyixFNBrE8"
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzI1ODg1MTU1LCJleHAiOjE3MjU4ODg3NTUsIm5iZiI6MTcyNTg4NTE1NSwianRpIjoiMnhqVUdtQ1lRWklFUmJxSiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ke5mh6NS57QQD166FKrjdpkk4t2nxlBEMbpM-JtXPhQ"
             }
         },
         {
@@ -202,11 +160,11 @@
             "colId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
             "containerId": "",
             "name": "/auth/refresh",
-            "url": "http://localhost/authentication/public/auth/refresh",
+            "url": "http://localhost/authentication/public/auth/refresh?refresh_token=agJtJrVC7INfUYG07Ht9CidBPUinCdiimAGyx5Qu6GWnB93TihZ5XllqXwCi",
             "method": "POST",
             "sortNum": 50000,
             "created": "2024-05-27T16:31:08.047Z",
-            "modified": "2024-09-09T08:59:10.653Z",
+            "modified": "2024-09-09T12:33:53.417Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -219,9 +177,16 @@
                     "isDisabled": true
                 }
             ],
+            "params": [
+                {
+                    "name": "refresh_token",
+                    "value": "agJtJrVC7INfUYG07Ht9CidBPUinCdiimAGyx5Qu6GWnB93TihZ5XllqXwCi",
+                    "isPath": false
+                }
+            ],
             "auth": {
                 "type": "bearer",
-                "bearer": "CjjdQFRNWTO0akEtLPo3ULsE6srCG2C0cWoEZkyBfoU05L0CXWVPfCNFKA3z"
+                "bearer": "agJtJrVC7INfUYG07Ht9CidBPUinCdiimAGyx5Qu6GWnB93TihZ5XllqXwCi"
             }
         },
         {
@@ -233,7 +198,7 @@
             "method": "GET",
             "sortNum": 60000,
             "created": "2024-05-27T16:31:08.048Z",
-            "modified": "2024-09-09T09:00:01.160Z",
+            "modified": "2024-09-09T12:53:22.580Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -248,7 +213,34 @@
             ],
             "auth": {
                 "type": "bearer",
-                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL2xvZ2luIiwiaWF0IjoxNzI1ODcyMzA4LCJleHAiOjE3MjU4NzU5MDgsIm5iZiI6MTcyNTg3MjMwOCwianRpIjoibmZ5U2JLYmR1MVdYbHVNRiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.FRT0EUiWCda3uGeyvdF_O3eTVrms-rGuBL00e9XjCiU"
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL3JlZnJlc2giLCJpYXQiOjE3MjU4ODYzODUsImV4cCI6MTcyNTg4OTk4NSwibmJmIjoxNzI1ODg2Mzg1LCJqdGkiOiJFV05GM3dnV3NsQXFtVk9nIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.fnB0RFgCO2TNgtTIgsiPdUHgad9hHy8JfWjklogw7SQ"
+            }
+        },
+        {
+            "_id": "8dbf0ddb-becd-4039-8734-9624e7ad18b5",
+            "colId": "da77d97d-110c-4c18-a39d-b333f0c9cb6f",
+            "containerId": "",
+            "name": "/auth/token-life",
+            "url": "http://localhost/authentication/public/auth/token-life",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-09-09T13:13:38.143Z",
+            "modified": "2024-09-09T13:14:16.850Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Accept",
+                    "value": "application/x-www-form-urlencoded",
+                    "isDisabled": true
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGhlbnRpY2F0aW9uL3B1YmxpYy9hdXRoL3JlZnJlc2giLCJpYXQiOjE3MjU4ODYzODUsImV4cCI6MTcyNTg4OTk4NSwibmJmIjoxNzI1ODg2Mzg1LCJqdGkiOiJFV05GM3dnV3NsQXFtVk9nIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.fnB0RFgCO2TNgtTIgsiPdUHgad9hHy8JfWjklogw7SQ"
             }
         }
     ],
@@ -257,5 +249,5 @@
             "baseUrl": "http://localhost:9004"
         }
     },
-    "ref": "FvAgoggY8_Df7JS80wwr_XVgnMIz5equ_oZtGt5tNlARZxv5462zsiG6fcNegKRLv0-E2soSDAeGPuKoqBBK8A"
+    "ref": "FvAgoggY8_Df7JS80wwr_WPF6eIxD9QLQgMr0MPtc6ne_m4M-Q_6xtOXLPnXG2cn-v4zKObF0MBeI3Gy49_RZw"
 }
