@@ -25,4 +25,5 @@ $router->group(['prefix' => 'auth'], function () use ($router) {
     $router->post('/me', 'AuthController@me');
     $router->get('/validate-token', 'AuthController@validateToken'); // Nuevo endpoint para validar el token
     $router->get('/test-token-ttl', 'AuthController@testTokenTTL');
+    $router->get('/token-life', 'AuthController@tokenLife');
 });
