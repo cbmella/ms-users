@@ -3,9 +3,15 @@ services:
   app:
     container_name: ms-users
     build: .
-    image: cbm3lla/api-lumen-ms-users-dev:1.0 # Etiqueta de la imagen
+    image: cbm3lla/api-lumen-ms-users-dev:1.0
     volumes:
       - C:/Users/admin/dev/configs/appoinment-magnament/.ms-users:/var/www/html/.env
+      - .:/var/www/html
+      - vendor:/var/www/html/vendor
     ports:
       - "12000:80"
     restart: always
+
+volumes:
+  vendor:
+    driver: local
