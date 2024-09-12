@@ -27,3 +27,8 @@ $router->group(['prefix' => 'auth'], function () use ($router) {
     $router->get('/test-token-ttl', 'AuthController@testTokenTTL');
     $router->get('/token-life', 'AuthController@tokenLife');
 });
+
+$router->group(['prefix' => 'users'], function () use ($router) {
+    $router->get('/role/{role}', 'UserController@getUsersByRole');
+    $router->get('/role/{role}/id/{id}', 'UserController@getUsersByRoleAndId');
+});
