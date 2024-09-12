@@ -1,11 +1,12 @@
-version: '3'
+version: "3"
 services:
   app:
-    container_name: authentication-api
+    container_name: ms-users
     build: .
-    image:  cbm3lla/api-lumen-authentication-dev:1.0  # Etiqueta de la imagen
+    image: cbm3lla/api-lumen-ms-users-dev:1.0
     volumes:
-      - C:/Users/admin/dev/configs/petfinder/.env:/var/www/html/.env
+      - C:/Users/admin/dev/configs/appoinment-magnament/.ms-users:/var/www/html/.env
+      - .:/var/www/html # Monta el código local en el contenedor
     ports:
-      - "9000:80"
+      - "12000:80"
     restart: always
