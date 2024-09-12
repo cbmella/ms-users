@@ -3,10 +3,9 @@ services:
   app:
     container_name: ms-users
     build: .
-    image: cbm3lla/api-lumen-ms-users-dev:1.0
+    image: cbm3lla/api-lumen-ms-users-dev:1.0 # Etiqueta de la imagen
     volumes:
       - C:/Users/admin/dev/configs/appoinment-magnament/.ms-users:/var/www/html/.env
-      - .:/var/www/html # Monta el código local en el contenedor
     ports:
       - "12000:80"
     restart: always
